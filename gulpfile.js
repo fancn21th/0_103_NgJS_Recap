@@ -25,7 +25,11 @@ function copyVendorJs(cb) {
 }
 
 function copyAppJs(cb) {
-  return src("./src//**/app/*.js").pipe(dest(buildPath));
+  return src("./src/**/app/**/*.js").pipe(dest(buildPath));
+}
+
+function copyAppTemplate(cb) {
+  return src("./src/**/app/**/*.tmpl.html").pipe(dest(buildPath));
 }
 
 // CLEAN TASK
@@ -34,7 +38,11 @@ function clean(cb) {
 }
 
 // BUILD TASK
-const build = series(clean, parallel(copyVendorJs, copyAppJs, copyCss), index);
+const build = series(
+  clean,
+  parallel(copyVendorJs, copyAppJs, copyCss, copyAppTemplate),
+  index
+);
 
 // SERVE
 function serve(cb) {
