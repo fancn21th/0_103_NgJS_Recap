@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="recap">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Angular JS Recap</title>
+    <title>Recap | Angular JS</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
@@ -12,14 +12,18 @@
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body ng-app="recap">
+  <body>
     <div class="container-fluid">
-      <a ui-sref="hello" ui-sref-active="active">Hello</a>
-      <a ui-sref="about" ui-sref-active="active">About</a>
-      <ui-view></ui-view>
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" ui-view="categories"></div>
+        <div
+          class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"
+          ui-view="bookmarks"
+        ></div>
+      </div>
     </div>
-    <script src="//unpkg.com/angular@1.6.5/angular.js"></script>
-    <script src="//unpkg.com/@uirouter/angularjs@1.0.5/release/angular-ui-router.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
     <!-- inject:js -->
     <!-- endinject -->
   </body>
