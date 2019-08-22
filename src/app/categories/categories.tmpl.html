@@ -1,12 +1,12 @@
-<a ui-sref="eggly.categories"
-  ><img class="logo" src="assets/img/eggly-logo.png"
-/></a>
+<a ui-sref="recap.categories"
+  ><span class="glyphicon glyphicon-heart" aria-hidden="true"></span
+></a>
 <ul class="nav nav-sidebar">
   <li
     ng-repeat="category in categoriesListCtrl.categories"
     ng-class="{'active':isCurrentCategory(category)}"
   >
-    <a ui-sref="eggly.categories.bookmarks({category:category.name})">
+    <a ui-sref="recap.categories.bookmarks({category:category.name})">
       {{ category.name }}
     </a>
   </li>

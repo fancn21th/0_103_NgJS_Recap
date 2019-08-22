@@ -4,7 +4,8 @@ module.exports = {
     "./src/assets/js/vendor/*.js",
     "./src/app/**/*.js",
     "./src/assets/css/**/*.css",
-    "./src/**/*.html"
+    "./src/index.html",
+    "./app/**/*.html"
   ],
   filesToInject: [
     "./src/assets/js/vendor/*.js",
