@@ -12,4 +12,12 @@ angular
       }
     });
   })
-  .controller("CategoriesListCtrl", function CategoriesListCtrl() {});
+  .controller("CategoriesListCtrl", function CategoriesListCtrl(
+    CategoriesModel
+  ) {
+    var categoriesListCtrl = this;
+
+    CategoriesModel.getCategories().then(function(result) {
+      categoriesListCtrl.categories = result;
+    });
+  });
