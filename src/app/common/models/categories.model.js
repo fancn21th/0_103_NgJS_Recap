@@ -41,7 +41,7 @@ angular
       var deferred = $q.defer();
 
       function findCategory() {
-        return _.find(categories, function(c) {
+        return categories.find(function(c) {
           return c.name == categoryName;
         });
       }
