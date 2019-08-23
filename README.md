@@ -6,4 +6,7 @@
 
 ## Mental Model
 
-- state mapping to url mapping to view
+- state, url, view
+  - url --> state --> view
+  - state.go(stateName, stateArg)
+  - ui-sref directive
