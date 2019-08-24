@@ -17,7 +17,7 @@ angular
     }
 
     function findBookmark(bookmarkId) {
-      return _.find(bookmarks, function(bookmark) {
+      return bookmarks.find(function(bookmark) {
         return bookmark.id === parseInt(bookmarkId, 10);
       });
     }
@@ -46,7 +46,7 @@ angular
     };
 
     model.updateBookmark = function(bookmark) {
-      var index = _.findIndex(bookmarks, function(b) {
+      var index = bookmarks.findIndex(function(b) {
         return b.id == bookmark.id;
       });
 
@@ -54,8 +54,9 @@ angular
     };
 
     model.deleteBookmark = function(bookmark) {
-      _.remove(bookmarks, function(b) {
+      var index = bookmarks.findIndex(function(b) {
         return b.id == bookmark.id;
       });
+      bookmarks.splice(index, 1);
     };
   });

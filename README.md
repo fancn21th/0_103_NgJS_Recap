@@ -10,3 +10,8 @@
   - url --> state --> view
   - state.go(stateName, stateArg)
   - ui-sref directive
+
+## TODOS
+
+- refactor against backend
+  - change to `https://jsonplaceholder.typicode.com/todos`
